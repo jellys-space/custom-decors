@@ -1,0 +1,230 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #313338;
+    color: #f5f5f5;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    overflow: auto;
+}
+
+.top-image {
+    width: 150px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.main-container {
+    margin: 20px;
+}
+
+.title-container {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5865F2;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.description-container {
+    margin-bottom: 20px;
+}
+
+.description-container p {
+    margin: 0;
+    color: #f5f5f5;
+    font-size: 20px;
+}
+
+.description-container a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.new-releases-container {
+    width: calc(100% - 40px); /* Adjust width to match container with margins */
+    margin-bottom: 40px; /* Increase margin bottom to create a gap */
+    text-align: left; /* Aligns the text to the left */
+}
+
+.new-releases-container h2 {
+    padding-left: 10px; /* Adjust padding for better alignment */
+}
+
+.new-releases {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align items to the left */
+    margin-left: -10px; /* Adjust margin for better alignment */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -10px; /* Adjust margin for better alignment */
+}
+
+.item {
+    position: relative;
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #6cb896;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-releases .item {
+    box-shadow: 0 0 15px 5px rgba(225, 125, 255, 0.7); /* Add bright purple glow to new releases items */
+}
+
+.image-wrapper {
+    position: relative;
+    width: 230px;
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: -20px;
+}
+
+.default-profile {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.frame {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.download-link {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #007bff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.download-link:hover,
+.download-link:active {
+    text-decoration: underline;
+}
+
+.additional-text {
+    margin-top: 20px;
+    color: #f5f5f5;
+    font-size: 18px;
+}
+
+.additional-text a:link,
+.additional-text a:visited,
+.additional-text a:hover,
+.additional-text a:active {
+    color: #007bff; /* Force the link color to always be blue */
+}
+
+.new-badge {
+    position: absolute;
+    top: 5px; /* Adjusted to be inside the frame */
+    right: 5px; /* Adjusted to be inside the frame */
+    width: 50px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 3;
+}
+
+@media (min-width: 1200px) {
+    .new-releases,
+    .container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        justify-items: center;
+    }
+
+    .main-container {
+        transform: scale(0.75);
+        transform-origin: top center;
+    }
+
+    .default-profile {
+        width: 185px;
+        height: 185px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        transform: scale(0.85);
+        transform-origin: top center;
+    }
+
+    .new-releases,
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        justify-items: center;
+    }
+
+    .item {
+        width: 135px;
+        height: 170px;
+        padding: 5px;
+        margin: 10px 0;
+    }
+
+    .image-wrapper {
+        width: 125px;
+        height: 125px;
+    }
+
+    .default-profile {
+        width: 105px;
+        height: 105px;
+    }
+
+    .frame {
+        width: 125px;
+        height: 125px;
+    }
+
+    .download-link {
+        font-size: 12px;
+        bottom: 5px;
+    }
+}
